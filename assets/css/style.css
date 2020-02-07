@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body, html, div, section {
+    height: 100%;
+}
+
+.demo {
+    border-top: 1px solid #666;
+}
