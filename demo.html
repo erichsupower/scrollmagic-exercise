@@ -24,57 +24,70 @@
 </head>
 
 <body>
-    <script>
-        
-    </script>
-
-    <section class="demo"></section>
-    <section class="demo">
-        <div id="trigger1"></div>
-        <div id="animate1" class="square"></div>
-    </section>
-    <section class="demo">
-        <div id="trigger2"></div>
-        <div id="animate2" class="square"></div>
-    </section>
-
 
     <script>
-        
         // init controller
         var controller = new ScrollMagic.Controller();
-
-        // build scene
-        var scene = new ScrollMagic.Scene({
-                triggerElement: "#trigger1"
-            })
-            .setTween("#animate1", 0.2, {
-                backgroundColor: "green",
-                scale: 2.5
-            }) // trigger a TweenMax.to tween
-            .addIndicators({
-                name: "1 (duration: 0)"
-            }) // add indicators (requires plugin)
-            .addTo(controller);
-
-        // build scene
-        var scene = new ScrollMagic.Scene({
-                triggerElement: "#trigger2",
-                duration: 400
-            })
-            // animate color and top border in relation to scroll position
-            // 與滾動位置相關的動畫顏色和頂部邊框
-            .setTween("#animate2", {
-                backgroundColor: "blue",
-                scale: 0.1,
-                // marginTop: "100px"
-            }) // 補間時間可以省略，默認為1
-            .setPin("#animate2")
-            .addIndicators({
-                name: "2 (duration: 400)"
-            }) // 添加指標（需要debug.addIndicators.js插件）
-            .addTo(controller);
     </script>
+
+    <section class="demo">
+        <h1>ScrollMagic Demo</h1>
+    </section>
+
+    <section id="demo1" class="demo">
+        <h2>Demo 1</h2>
+        <div id="trigger1"></div>
+        <div id="animate1" class="square"></div>
+
+        <script>
+            // build scene
+            var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger1"
+                })
+                .setTween("#animate1", 0.2, {
+                    backgroundColor: "green",
+                    scale: 2.5
+                }) // trigger a TweenMax.to tween
+                .addIndicators({
+                    name: "1 (duration: 0)"
+                }) // add indicators (requires plugin)
+                .addTo(controller);
+        </script>
+    </section>
+
+    <section id="demo2" class="demo">
+        <h2>Demo 2</h2>
+        <div id="trigger2"></div>
+        <div id="animate2" class="square"></div>
+
+        <script>
+            // build scene
+            var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger2",
+                    duration: 400
+                })
+                // 與滾動位置相關的動畫顏色和頂部邊框
+                .setTween("#animate2", {
+                    backgroundColor: "blue",
+                    scale: 0.1,
+                    rotation: 360
+                }) // 補間時間可以省略，默認為1
+                .setPin("#animate2")
+                .addIndicators({
+                    name: "2 (duration: 400)"
+                }) // 添加指標（需要加入debug.addIndicators.js插件）
+                .addTo(controller);
+        </script>
+    </section>
+
+    <section id="demo3" class="demo">
+        <h2>Demo 3</h2>
+        <div id="trigger3"></div>
+        <div id="animate3" class="square"></div>
+    </section>
+
+
+
 
 </body>
 
