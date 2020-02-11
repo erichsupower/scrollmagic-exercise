@@ -1,12 +1,12 @@
 # GreenSock
 
+[GreenSock 英文官網](https://greensock.com/)
+[對岸中文參考網站](https://www.tweenmax.com.cn/)
+
 <!-- toc -->
 
 - [GreenSock](#greensock)
   - [TweenMax 中文手冊章節劃分](#tweenmax-%e4%b8%ad%e6%96%87%e6%89%8b%e5%86%8a%e7%ab%a0%e7%af%80%e5%8a%83%e5%88%86)
-  - [TimelineMax API](#timelinemax-api)
-    - [.add()](#add)
-    - [.addCallback()](#addcallback)
     - [時間軸初始化及動畫管理](#%e6%99%82%e9%96%93%e8%bb%b8%e5%88%9d%e5%a7%8b%e5%8c%96%e5%8f%8a%e5%8b%95%e7%95%ab%e7%ae%a1%e7%90%86)
     - [時間軸初始設置](#%e6%99%82%e9%96%93%e8%bb%b8%e5%88%9d%e5%a7%8b%e8%a8%ad%e7%bd%ae)
     - [時間軸事件](#%e6%99%82%e9%96%93%e8%bb%b8%e4%ba%8b%e4%bb%b6)
@@ -54,59 +54,6 @@ TweenLite.to('div', 5, {x:300});
 介紹了 TweenLite / TweenMax 實例的屬性設置，如設置選擇器，讀取時間軸等
 - 07節-實例方法：
 介紹 TweenLite / TweenMax 實例的函數方法，如刪除動畫，動畫渲染
-
-## TimelineMax API
-
-構建一個 TimelineMax 實例，創建時間軸。
-
-```
-new TimelineMax();
-```
-
-基本的使用示例
-
-```js
-//創建一個重覆3次，每次1秒間隔的時間軸，當時間軸結束時執行 myFunction()
-var tl = new TimelineMax({repeat:3, repeatDelay:1, onComplete:myFunction});
-
-//添加一個動畫
-tl.add( TweenLite.to(element, 1, {left:200, top:100}) );
-        
-//在時間軸結束添加另一個動畫
-tl.add( TweenLite.to(element, 0.5, {opacity:0}) );
- 
-//透過 .to() 方法添加一個動畫，添加於時間軸結束後 0.5 秒處
-tl.to(element, 1, {rotation:30}, "+=0.5");
-         
-//反向播放時間軸
-tl.reverse();
-
-//在三秒鐘處插入一个標籤
-tl.addLabel("spin", 3);
-
-//在標籤處插入一個動畫
-tl.add( new TweenLite(element, 2, {rotation:"+=360"}), "spin");
-    
-//跳轉到標籤處開始播放
-tl.play("spin");
-
-//在時間軸 tl 中插入另一個時間軸 nested
-var nested = new TimelineMax();
-nested.to(element2, 1, {left:200}));
-tl.add(nested);
-```
-
-### .add()
-向時間軸添加動畫、其他時間軸、回調函數或標籤（或它們的數組）。
-[>>> 中文說明](https://www.tweenmax.com.cn/api/timelinemax/add().html)
-
-```
-.add( value:*, position:*, align:String, stagger:Number ) : *
-```
-
-### .addCallback()
-在特定位置插入回調函數。
-[>>> 中文說明](https://www.tweenmax.com.cn/api/timelinemax/addCallback())
 
 ### 時間軸初始化及動畫管理
 |                   | 說明                                                                                                                                                                                                                      | 了解更多 |
