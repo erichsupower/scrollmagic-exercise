@@ -8,14 +8,6 @@
 
 - [GreenSock](#greensock)
   - [TweenMax 中文手冊章節劃分](#tweenmax-%e4%b8%ad%e6%96%87%e6%89%8b%e5%86%8a%e7%ab%a0%e7%af%80%e5%8a%83%e5%88%86)
-  - [TimelineMax API](#timelinemax-api)
-    - [時間軸初始化及動畫管理](#%e6%99%82%e9%96%93%e8%bb%b8%e5%88%9d%e5%a7%8b%e5%8c%96%e5%8f%8a%e5%8b%95%e7%95%ab%e7%ae%a1%e7%90%86)
-    - [時間軸初始設置](#%e6%99%82%e9%96%93%e8%bb%b8%e5%88%9d%e5%a7%8b%e8%a8%ad%e7%bd%ae)
-    - [時間軸事件](#%e6%99%82%e9%96%93%e8%bb%b8%e4%ba%8b%e4%bb%b6)
-    - [時間軸播放组件](#%e6%99%82%e9%96%93%e8%bb%b8%e6%92%ad%e6%94%be%e7%bb%84%e4%bb%b6)
-    - [時間軸属性调整](#%e6%99%82%e9%96%93%e8%bb%b8%e5%b1%9e%e6%80%a7%e8%b0%83%e6%95%b4)
-    - [時間軸对象属性](#%e6%99%82%e9%96%93%e8%bb%b8%e5%af%b9%e8%b1%a1%e5%b1%9e%e6%80%a7)
-    - [時間軸对象方法](#%e6%99%82%e9%96%93%e8%bb%b8%e5%af%b9%e8%b1%a1%e6%96%b9%e6%b3%95)
 
 <!-- tocstop -->
 
@@ -56,4 +48,3 @@ TweenLite.to('div', 5, {x:300});
 介紹了 TweenLite / TweenMax 實例的屬性設置，如設置選擇器，讀取時間軸等
 - 07節-實例方法：
 介紹 TweenLite / TweenMax 實例的函數方法，如刪除動畫，動畫渲染
-

@@ -1,5 +1,16 @@
 # scrollmagic
 
+<!-- toc -->
+
+- [scrollmagic](#scrollmagic)
+  - [About the Library](#about-the-library)
+  - [Availability (for npm)](#availability-for-npm)
+  - [Installation](#installation)
+  - [Basic Usage](#basic-usage)
+  - [線上資源](#%e7%b7%9a%e4%b8%8a%e8%b3%87%e6%ba%90)
+
+<!-- tocstop -->
+
 ## About the Library
 
 ScrollMagic 的開發遵循以下原則：
@@ -62,3 +73,11 @@ new ScrollMagic.Scene({
     .setPin('#my-sticky-element') // 在Scene的持續時間內，套用效果到指定元素
     .addTo(controller); // 將Scene指派給controller
 ```
+
+## 線上資源
+
+- [Eric's Demo Site](demo.html)
+- [ScrollMagic Website](https://scrollmagic.io/)
+- [ScrollMagic Examples](https://scrollmagic.io/examples/index.html)
+- [ScrollMagic Documentation](https://scrollmagic.io/docs/index.html)
+- [ScrollMagic Github](https://github.com/janpaepke/ScrollMagic)

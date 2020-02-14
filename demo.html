@@ -35,12 +35,13 @@
     </section>
 
     <!--
-    *****************************************************
+    ******************************************************************************
     Demo 1
-    *****************************************************
+    ******************************************************************************
     -->
     <section id="demo1" class="demo">
         <h2>Demo 1</h2>
+        <p>配合 GreenSock 套件使用。</p>
         <div id="trigger1"></div>
         <div id="animate1" class="square"></div>
 
@@ -61,12 +62,13 @@
     </section>
 
     <!--
-    *****************************************************
+    ******************************************************************************
     Demo 2
-    *****************************************************
+    ******************************************************************************
     -->
     <section id="demo2" class="demo">
         <h2>Demo 2</h2>
+        <p>配合 GreenSock 套件使用，加入定位效果。</p>
         <div id="trigger2"></div>
         <div id="animate2" class="square"></div>
 
@@ -91,12 +93,13 @@
     </section>
 
     <!--
-    *****************************************************
+    ******************************************************************************
     Demo 3
-    *****************************************************
+    ******************************************************************************
     -->
     <section id="demo3" class="demo">
         <h2>Demo 3</h2>
+        <p>使用 SVG 動畫。</p>
         <div id="trigger3"></div>
         <div id="animate3">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="350" height="200" id="animate3">
@@ -124,16 +127,13 @@
                 $el.css("stroke-dasharray", lineLength);
                 $el.css("stroke-dashoffset", lineLength);
             }
-            
+
             var $word = $("path#word");
             var $dot = $("path#dot");
 
             // prepare SVG
             pathPrepare($word);
             pathPrepare($dot);
-
-            // init controller
-            // var controller = new ScrollMagic.Controller();
 
             // build tween
             var tween = new TimelineMax()
@@ -153,22 +153,89 @@
             // build scene
             var scene = new ScrollMagic.Scene({
                     triggerElement: "#trigger3",
-                    duration: 400,
+                    duration: 500,
                     tweenChanges: true
                 })
                 .setTween(tween)
                 .setPin("#animate3")
-                .addIndicators() // add indicators (requires plugin)
+                .addIndicators({
+                    name: "3 (duration: 500)"
+                }) // add indicators (requires plugin)
                 .addTo(controller);
         </script>
     </section>
 
+    <!--
+    ******************************************************************************
+    Demo 4
+    ******************************************************************************
+    -->
     <section id="demo4" class="demo">
         <h2>Demo 4</h2>
+        <p>觸發純 CSS 方法。</p>
         <div id="trigger4"></div>
         <div id="animate4" class="square"></div>
+
+        <script>
+            // build scene
+            var scene = new ScrollMagic.Scene({
+                    triggerElement: "#trigger4"
+                })
+                // 與滾動位置相關的動畫顏色和頂部邊框
+                .setClassToggle("#animate4", "active") // 補間時間可以省略，默認為1
+                .setPin("#animate4")
+                .addIndicators({
+                    name: "4 (duration: 0)"
+                }) // 添加指標（需要加入debug.addIndicators.js插件）
+                .addTo(controller);
+        </script>
     </section>
 
+    <!--
+    ******************************************************************************
+    Demo 5
+    ******************************************************************************
+    -->
+    <section id="demo5" class="demo">
+        <h2>Demo 5</h2>
+        <p>使用迴圈加入多個元素。</p>
+        <!-- <div id="trigger5"></div> -->
+        <div id="reveal-elements">
+            <div class="square animate5 blue">
+                <p>1</p>
+            </div>
+            <div class="square animate5 turqoise">
+                <p>2</p>
+            </div>
+            <div class="square animate5 red">
+                <p>3</p>
+            </div>
+            <div class="square animate5 green">
+                <p>4</p>
+            </div>
+            <div class="square animate5 orange">
+                <p>5</p>
+            </div>
+        </div>
+
+        <script>
+            // build scenes
+            var revealElements = document.getElementsByClassName("animate5");
+            for (var i = 0; i < revealElements.length; i++) { // create a scene for each element
+                new ScrollMagic.Scene({
+                        triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+                        offset: 0, // start a little later
+                    })
+                    .setClassToggle(revealElements[i], "visible") // add class toggle
+                    .addIndicators({
+                        name: "animate5 " + (i + 1)
+                    }) // add indicators (requires plugin)
+                    .addTo(controller);
+            }
+        </script>
+    </section>
+
+    <section class="demo"></section>
 
 </body>
 
